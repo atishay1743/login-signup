@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <meta name="viewport" content="width=\, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+<div style=" margin-left: 40% ;margin-right : 40%; margin-top:10%">
+
+
+<h1 >Register</h1>
+<%- include ('./partials/messages') %>
+<form action="/users/register" method="POST" >
+<div class="form-group col-md-6">
+    <label for="name">Name</label>
+    <input
+      type="name"
+      name="name"
+      placeholder="Enter Name"
+      value="<%= typeof name != 'undefined' ? name : '' %>"
+    />
+
+</div>
+<div class="form-group col-md-6">
+    <label for="email">Email</label>
+    <input
+      type="email"
+      name="email"
+      placeholder="Enter Email"
+      value="<%= typeof email != 'undefined' ? email : '' %>"
+    />
+  </div>
+  <div class="form-group col-md-6">
+    <label for="password">Password</label>
+    <input
+      type="password"
+      name="password"
+      placeholder="Create Password"
+      value="<%= typeof password != 'undefined' ? password : '' %>"
+    />
+  </div>
+  <div class="form-group col-md-6">
+    <label for="password2">Confirm Password</label>
+    <input
+      type="password"
+      name="password2"
+      placeholder="Confirm Password"
+      value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
+    />
+  </div>
+  <button type="submit" class="btn btn-success">
+    Register
+  </button>
+</form>
+<p >Have An Account? <a href="/users/login" class="btn btn-info">Login</a></p>
+</div>
